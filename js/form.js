@@ -1,27 +1,41 @@
 
 //class contato
 
-class contato {
-    
-}
-
-function Post(form) {
-
-  let data = new contato(form.elements.namedItem("nome").value,
-            form.elements.namedItem("sobrenome").value, 
-            form.elements.namedItem("email").value, 
-            form.elements.namedItem("cpf").value, 
-            form.elements.namedItem("telefone").value, 
-            form.elements.namedItem("contato").value);
-  
-}
-
-function Enviar() {
-
-    var nome = document.getElementById("nomeid");
-
-    if (nome.value != "") {
-        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
+class Contato {
+    constructor(nome, sobrenome, email, cpf, telefone, contato) {
+      this.nome = nome;
+      this.sobrenome = sobrenome;
+      this.email = email;
+      this.cpf = cpf;
+      this.telefone = telefone;
+      this.contato = contato;
     }
-
-}
+  }
+  
+  function Post(event, form) {
+    event.preventDefault(); // impede recarregar a página
+  
+    const data = new Contato(
+      form.nome.value,
+      form.sobrenome.value,
+      form.email.value,
+      form.cpf.value,
+      form.telefone.value,
+      form.contato.value
+    );
+  
+    Enviar(data);
+  }
+  
+  function Enviar(contato) {
+    if (contato.nome.trim() !== "") {
+      alert(`Obrigado(a) ${contato.nome}, seus dados foram enviados com sucesso!`);
+  
+      // 👉 Mostra os dados no console
+      console.log("Dados enviados:", contato);
+    } else {
+      alert("Por favor, preencha o nome.");
+    }
+  }
+  
+  
