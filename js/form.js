@@ -37,5 +37,19 @@ class Contato {
       alert("Por favor, preencha o nome.");
     }
   }
+  // Habilitar botão apenas se aceitar os termos
+document.addEventListener("DOMContentLoaded", () => {
+  const agree = document.getElementById("agreeTerms");
+  const submitBtn = document.querySelector("button[type='submit']");
+
+  if (agree && submitBtn) {
+    submitBtn.disabled = true;
+
+    agree.addEventListener("change", () => {
+      submitBtn.disabled = !agree.checked;
+    });
+  }
+});
+
   
   

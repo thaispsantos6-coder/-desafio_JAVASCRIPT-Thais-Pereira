@@ -27,8 +27,7 @@ main div {
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    
 }
 
 .forms {
@@ -45,10 +44,42 @@ h2 {
 button {
     width: 200px;
     height: 40px;
-    margin-right: 8px;
-    float: right;
+    margin-top: 10px;
+    align-self: flex-end; /* ou center se quiser centralizado */
+    margin-left: 37%;
 }
+
 
 .titulo {
     margin-left: 8px;
+}
+
+p {
+    text-align: justify;
+    margin-left: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+    width: 310px; /* opcional: limita a largura pra ficar mais bonito */
+  }
+  
+
+  .checkbox-container {
+    display: flex;
+    align-items: flex-start; /* Alinha o checkbox com o topo do texto */
+    gap: 6px; /* Espaço entre o checkbox e o texto */
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+
+.checkbox-container label {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    margin: 0; /* Remove o margin-left antigo */
+    margin-top: 2px; /* Pequeno ajuste vertical se necessário */
+    border: 1px solid #1b357e;
 }
